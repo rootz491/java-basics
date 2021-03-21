@@ -29,3 +29,21 @@ class maxmin {
 
 	}
 }
+
+/*
+OUTPUT
+======
+
+% javac maxmin.java 
+% java maxmin 
+Enter first Number: 
+3
+Enter second Number: 
+4
+Enter third Number: 
+10
+
+max: 3
+min: 10
+
+*/
