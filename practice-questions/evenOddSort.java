@@ -16,7 +16,7 @@ class evenOddSort {
 			System.out.println(i);
 		}
 
-		//	push even to first
+		//	push odd to first
 		for(int i=1; i<s; i++) {
 			int current = i;
 			int j = i-1;
