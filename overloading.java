@@ -21,16 +21,13 @@ class overloading {
 
 class overload {
 	public static void main(String[] arg) {
-                 overloading ob = new overloading();
+        overloading ob = new overloading();
 
 		int a = 7;
 		int b = 10;
-
-                 ob.getValue(a, b);
- 
-                 ob.add();
-         }
-	
+		ob.getValue(a, b);
+		ob.add();
+	}
 }
 
 

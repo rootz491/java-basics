@@ -1,4 +1,4 @@
-public class constImp  {
+public class constImp {
 	public int age;
 	public double height;
 	public String name;

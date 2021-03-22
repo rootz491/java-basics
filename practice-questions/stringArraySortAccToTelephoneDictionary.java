@@ -34,7 +34,7 @@ class stringArraySortAccToTelephoneDictionary {
 						break;
 					}
 				}
-				if(flag==99)	break;	//	if both string are same then move on
+				if(flag==99)	continue;	//	if both string are same then move on
 				if((int)list[current].charAt(flag)<(int)list[j].charAt(flag)) {
 					//	swap b/w strings
 					list[current] += list[j];

@@ -16,7 +16,7 @@ public class Bicycle {
 	}
 
 	public void setGear(int value) {
-		gear = gear;
+		gear = value;
 	}
 
 	public void applyBreaks(int value) {
