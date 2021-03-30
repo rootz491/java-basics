@@ -29,6 +29,7 @@ class practice {
 		System.out.println("\nLIST");
 		Iterator<Student> itr = student.iterator();
 		while(itr.hasNext()) {
+			//	next() will return obejct and that can be stored in temprory object then access it's variables.
 			Student st = (Student)itr.next();
 			System.out.println("\nName: "+st.name+"\nRoll no.: "+st.rollNo+"\nGrade:"+st.grade);
 		}
