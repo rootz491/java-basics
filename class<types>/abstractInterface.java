@@ -35,7 +35,7 @@ OUTPUT
 % javac abstractInterface.java
 % java abstractInterface
 
-me:	cow
+me:		cow
 eat:	grass
 sleep:	zZz
 */
