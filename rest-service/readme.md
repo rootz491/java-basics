@@ -6,7 +6,7 @@ this is just a demo web service that i created in order to understand Spring boo
 
 *	it can only handle `Get` request.
 
-1.	/greeting
+1.	__/greeting__
 ```r
 http://localhost:8080/greeting
 ```
@@ -16,14 +16,14 @@ will return the JSON response:
 {"id":1,"context":"Hello, world"}
 ```
 
-2.	/greeting?name=karan
+2.	__/greeting?name=karan__
 ```r
 http://localhost:8080/greeting?name=karan
 ```
 
 will return the JSON response:
 ```json
-{"id":12,"context":"Hello, karan"}
+{"id":2,"context":"Hello, karan"}
 ```
 
 ##	to tun it on you machine (localhost)
