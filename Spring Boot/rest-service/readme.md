@@ -42,6 +42,6 @@ $	./mvnw clean package
 $	java -jar target/rest-service-0.0.1-SNAPSHOT.jar
 ```
 
-and vollah, it's up;
+and vollah, it's up;    
 **cheers.**
 
