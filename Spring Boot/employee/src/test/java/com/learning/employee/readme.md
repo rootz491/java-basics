@@ -23,3 +23,11 @@ src/main/java/com/learning/employee/
 ```
 
 *	so good luck future me! fix this when you'll get along with java (Spring Boot)
+
+##	want to run locally?
+
+to run locally, open shell and go to root of this project. Then, use the following command:
+
+```bash
+$	./mvnw spring-boot:run
+```
