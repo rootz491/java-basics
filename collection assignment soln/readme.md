@@ -1,5 +1,5 @@
 # java collections assignment
 
-> 6th question is not correct!
+> Q6 code is not correct!
 
 ![assignment](questions.png)
