@@ -1,4 +1,5 @@
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,26 +8,23 @@ import java.util.Map.Entry;
 import java.util.Comparator;
 import java.lang.Math;
 
-//	NOT CORRECT ! ! !
+
 class Q6 {
 
-	public static Map<Integer, Integer> sortByValue(Map<Integer, Integer> init, boolean order) {
-		List<Entry<Integer, Integer>> list = new LinkedList<Entry<Integer, Integer>>(init.entrySet());
+	public static Map<Integer, Integer> sortByValue(Map<Integer, Integer> init) {
+		List<Integer> initVal = new LinkedList<Integer>(init.values());
+		Map<Integer, Integer> sorted = new LinkedHashMap<Integer, Integer>();
 
-		//	sorting list based on values
-		Collections.sort(list, new Comparator<Entry<Integer, Integer>>() {
-			public int compare(Entry<Integer, Integer> ob1, Entry<Integer, Integer> ob2) {
-				if(order)
-					return ob1.getValue().compareTo(ob2.getValue());
-				else
-					return ob1.getValue().compareTo(ob1.getValue());
-			}
-		});
+		Collections.sort(initVal);
 
-		Map<Integer, Integer> sorted = new HashMap<Integer, Integer>();
-		for(Entry<Integer, Integer> i : list) {
-			sorted.put(i.getKey(), i.getValue());
-		}
+		for(Integer val : initVal)
+			for(Integer key : init.keySet())
+				if(val.equals(init.get(key))) {				//	when key of current value will occur
+					if(sorted.containsKey(key))					//	when first duplate will occur
+						continue;									//	then pass	
+					sorted.put(key, val);						//	else, push data into sorted map
+					break;
+				}
 
 		return sorted;
 	}
@@ -34,16 +32,28 @@ class Q6 {
 
 	public static void main(String[] args) {
 		Map<Integer, Integer> initial = new HashMap<Integer, Integer>();
-		boolean ASC = true;
 
-		//	make a map of 5 random pairs
+		//	add 5 random pairs to map
 		for(int i=0; i<5; i++)
 			initial.put((int)(Math.random()*100), (int)(Math.random()*100)/2);
+		//	add 3 random keys with same values to map
+		for(int i=0; i<3; i++)
+			initial.put((int)(Math.random()*100), 5);
 
 		System.out.println("unsorted ->\t" + initial);
 
-		Map<Integer, Integer> sorted = sortByValue(initial, ASC);
+		Map<Integer, Integer> sorted = sortByValue(initial);
 
 		System.out.println("sorted ->\t" + sorted);
 	}
 }
+
+/*
+OUTPUT
+======
+
+% javac Q6.java
+% java Q6      
+unsorted ->	{87=30, 50=20, 0=37, 43=3, 13=32, 93=5, 84=5, 39=5}
+sorted ->	{43=3, 93=5, 84=5, 39=5, 50=20, 87=30, 13=32, 0=37}
+*/
