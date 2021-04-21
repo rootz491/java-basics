@@ -4,8 +4,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Comparator;
+import java.lang.Math;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.lang.Math;
 
 
@@ -13,17 +18,17 @@ class Q6 {
 
 	public static Map<Integer, Integer> sortByValue(Map<Integer, Integer> init) {
 		List<Integer> initVal = new LinkedList<Integer>(init.values());
-		Map<Integer, Integer> sorted = new LinkedHashMap<Integer, Integer>();
+		Map<Integer, Integer> sorted = new LinkedHashMap<Integer, Integer>();	//	LinkedHashMap maintains insertion order
 
-		Collections.sort(initVal);
+		Collections.sort(initVal);			//	sort list of VALUES
 
-		for(Integer val : initVal)
-			for(Integer key : init.keySet())
-				if(val.equals(init.get(key))) {				//	when key of current value will occur
-					if(sorted.containsKey(key))					//	when first duplate will occur
-						continue;									//	then pass	
-					sorted.put(key, val);						//	else, push data into sorted map
-					break;
+		for(Integer val : initVal)							//	iterate over sorted list of VALUES
+			for(Integer key : init.keySet())				//	iterate over list of KEYS forEach VALUE
+				if(val.equals(init.get(key))) {					//	if key of current value will occur
+					if(sorted.containsKey(key))						//	if duplicates duplate will occur
+						continue;										//	then pass	
+					sorted.put(key, val);							//	else, push data into SORTED map
+					break;											//	break inner loop
 				}
 
 		return sorted;
