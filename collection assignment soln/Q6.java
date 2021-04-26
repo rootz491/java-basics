@@ -26,7 +26,7 @@ class Q6 {
 			for(Integer key : init.keySet())				//	iterate over list of KEYS forEach VALUE
 				if(val.equals(init.get(key))) {					//	if key of current value will occur
 					if(sorted.containsKey(key))						//	if duplicates duplate will occur
-						continue;										//	then pass	
+						continue;										//	then pass
 					sorted.put(key, val);							//	else, push data into SORTED map
 					break;											//	break inner loop
 				}

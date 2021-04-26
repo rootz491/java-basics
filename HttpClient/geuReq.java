@@ -21,7 +21,7 @@ class GEU {
 	}
 
 	public static void getReq() throws URISyntaxException, IOException, InterruptedException {
-		//	setup a client
+		//	setup a client 
 		HttpClient client = HttpClient.newHttpClient();
 		//	build a GET request
 		HttpRequest request = HttpRequest.newBuilder().version(HttpClient.Version.HTTP_2).uri(URI.create("https://student.geu.ac.in/")).header("Accept-Encoding", "gzip deflate").build();
