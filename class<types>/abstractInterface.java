@@ -1,5 +1,5 @@
 interface Animal {
-	//	interface - method doesn't have body
+	//	interface - method doesn't have body and are public only
 	public void eat();
 	public void sleep();
 }
